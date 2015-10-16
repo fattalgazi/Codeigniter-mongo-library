@@ -158,7 +158,7 @@ Class Mongo_db{
 				$this->debug = $this->config[$this->activate]['db_debug'];
 			}
 
-			if(empty($this->config[$this->activate]['write_concerns']))
+			if(!isset($this->config[$this->activate]['write_concerns']))
 			{
 				$this->write_concerns = 1;
 			}
@@ -167,7 +167,7 @@ Class Mongo_db{
 				$this->write_concerns = $this->config[$this->activate]['write_concerns'];
 			}
 
-			if(empty($this->config[$this->activate]['journal']))
+			if(!isset($this->config[$this->activate]['journal']))
 			{
 				$this->journal = TRUE;
 			}
